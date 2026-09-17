@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Static site generator for englishoutsidethebox — run `python3 build.py`, output lands in public/.
 Needs: beautifulsoup4 + lxml (pip install -r requirements.txt)."""
-import json, os, re, shutil, html, datetime
+import json, os, re, shutil, html, datetime, hashlib
 from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString
 
@@ -9,6 +9,9 @@ ROOT = Path(__file__).parent
 OUT = ROOT / "public"
 SRC = ROOT / "source"
 SITE = "https://englishotb.vercel.app"
+def _v(p):
+    return hashlib.md5((ROOT / p).read_bytes()).hexdigest()[:8]
+V_CSS = _v("assets/css/site.css"); V_JS = _v("assets/js/site.js")
 WA = "https://wa.me/message/ATIRTKSRZIVRC1"
 YT = "https://www.youtube.com/channel/UCQGEOqPP0IJ8Or502xwEaqg"
 IG = "https://www.instagram.com/jenesl760/"
@@ -76,7 +79,7 @@ def layout(title, body, path, desc="", og_image="/assets/img/og.jpg", body_class
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Shantell+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/site.css?v={V_CSS}">
 <script>document.documentElement.classList.remove('no-js')</script>
 {extra_head}
 </head>
@@ -145,7 +148,7 @@ def layout(title, body, path, desc="", og_image="/assets/img/og.jpg", body_class
     </div>
   </div>
 </footer>
-<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/site.js?v={V_JS}" defer></script>
 </body>
 </html>"""
 
