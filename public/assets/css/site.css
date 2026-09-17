@@ -126,7 +126,7 @@ hr { border: 0; border-top: 2px solid var(--ink); opacity: .2; margin: 2.5rem 0;
 .brand img { height: 46px; width: auto; display: block; }
 .nav { display: flex; align-items: center; gap: .1rem; }
 .nav a {
-  font-weight: 800; font-size: .98rem; text-decoration: none; color: var(--ink);
+  font-weight: 800; font-size: .98rem; text-decoration: none; color: var(--ink); white-space: nowrap;
   padding: .55rem .8rem; border-radius: var(--pill);
   transition: background .2s;
 }
@@ -137,7 +137,7 @@ hr { border: 0; border-top: 2px solid var(--ink); opacity: .2; margin: 2.5rem 0;
   display: none; background: none; border: 2px solid var(--ink); border-radius: var(--pill);
   padding: .5rem .85rem; font: inherit; font-weight: 800; cursor: pointer; color: var(--ink);
 }
-@media (max-width: 960px) {
+@media (max-width: 1120px) {
   .nav-toggle { display: inline-flex; align-items: center; gap: .5rem; }
   .nav {
     display: none; position: absolute; left: 0; right: 0; top: 100%;
