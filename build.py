@@ -316,7 +316,10 @@ def page_about():
       <h1>Welcome to English Outside the Box. I am Jennifer!</h1>
       <p class="lede">Are you ready to finally start speaking better English with more confidence? Good! Then you are in the right place.</p>
     </div>
-    <div>{frame('/assets/img/IMG_1840.jpg', 'Jennifer in a mustard sweater against a white brick wall', 'frame--tilt-r', 1000, 667)}</div>
+    <div class="outside-box" aria-label="Jennifer stepping outside the box">
+      <div class="outside-box__frame"></div>
+      <img src="/assets/img/jennifer-tada.png" alt="Jennifer in a bright yellow blouse, arms out, stepping outside a small picture frame" width="938" height="1040" loading="eager" fetchpriority="high">
+    </div>
   </div>
 </section>
 

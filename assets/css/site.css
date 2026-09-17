@@ -499,3 +499,19 @@ html:not(.no-js) .frame--tilt-r.reveal.in { transform: rotate(1.2deg); }
 .archive > summary { list-style: none; display: inline-flex; }
 .archive > summary::-webkit-details-marker { display: none; }
 .archive[open] > summary { display: none; }
+
+/* ---------- Outside the box (About hero) ---------- */
+.outside-box { position: relative; width: min(100%, 440px); margin-inline: auto; aspect-ratio: 9/10; }
+.outside-box__frame {
+  position: absolute; left: 20%; right: 12%; top: 40%; bottom: 0;
+  background: var(--white); border: 2px solid var(--ink); padding: 12px;
+  box-shadow: var(--shadow); transform: rotate(1.6deg);
+}
+.outside-box__frame::after { content: ""; position: absolute; inset: 12px; background: var(--butter); }
+.outside-box img {
+  position: absolute; left: 0; bottom: 0; width: 100%; height: auto;
+  transform-origin: bottom center; animation: stepOut 1.2s var(--ease-out) both;
+}
+@keyframes stepOut { from { transform: translateY(6%) scale(.92); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .outside-box img { animation: none; } }
+@media (max-width: 800px) { .outside-box { width: min(100%, 340px); } }
