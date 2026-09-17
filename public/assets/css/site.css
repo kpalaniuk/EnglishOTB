@@ -501,13 +501,13 @@ html:not(.no-js) .frame--tilt-r.reveal.in { transform: rotate(1.2deg); }
 .archive[open] > summary { display: none; }
 
 /* ---------- Outside the box (About hero) ---------- */
-.outside-box { position: relative; width: min(100%, 440px); margin-inline: auto; aspect-ratio: 9/10; }
+.outside-box { position: relative; width: min(100%, 460px); margin-inline: auto; aspect-ratio: 19/20; }
 .outside-box__frame {
-  position: absolute; left: 20%; right: 12%; top: 40%; bottom: 0;
+  position: absolute; left: 6%; right: 0; top: 26%; bottom: 0;
   background: var(--white); border: 2px solid var(--ink); padding: 12px;
   box-shadow: var(--shadow); transform: rotate(1.6deg);
 }
-.outside-box__frame::after { content: ""; position: absolute; inset: 12px; background: var(--butter); }
+.outside-box__frame::after { content: ""; position: absolute; inset: 12px; background: var(--white); border: 1px solid rgba(43,42,40,.12); }
 .outside-box img {
   position: absolute; left: 0; bottom: 0; width: 100%; height: auto;
   transform-origin: bottom center; animation: stepOut 1.2s var(--ease-out) both;

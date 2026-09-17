@@ -219,7 +219,7 @@ def page_home():
 
 <section class="section section--butter section--line-top" id="jennifer">
   <div class="wrap grid-2">
-    <figure class="frame frame--tilt frame--cut reveal"><img src="/assets/img/jennifer-tada.png" alt="Jennifer in a bright yellow blouse, arms out in a ta-da pose" width="938" height="1040" loading="eager"></figure>
+    <figure class="frame frame--tilt frame--cut reveal"><img src="/assets/img/jennifer-tada.png" alt="Jennifer in a bright yellow blouse, arms out in a ta-da pose" width="1011" height="1064" loading="eager"></figure>
     <div class="reveal">
       <h2>HI! I'm Jennifer Nascimento</h2>
       <p class="lede">I am a certified Positive Psychology English Coach and the founder of the <a href="/englishsuccesssystem/">English Success System</a>.</p>
@@ -318,7 +318,7 @@ def page_about():
     </div>
     <div class="outside-box" aria-label="Jennifer stepping outside the box">
       <div class="outside-box__frame"></div>
-      <img src="/assets/img/jennifer-tada.png" alt="Jennifer in a bright yellow blouse, arms out, stepping outside a small picture frame" width="938" height="1040" loading="eager" fetchpriority="high">
+      <img src="/assets/img/jennifer-tada.png" alt="Jennifer in a bright yellow blouse, arms out, stepping outside a small picture frame" width="1011" height="1064" loading="eager" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -570,7 +570,7 @@ def page_ingles():
       <p class="lede">Você quer aprender mais comigo? Sou uma professora de inglês. Eu falo português e posso te ajudar!</p>
       <div class="btn-row"><a class="btn" href="{WA}" target="_blank" rel="noopener">{ICO['wa']} Manda uma mensagem</a></div>
     </div>
-    <figure class="frame frame--tilt-r frame--cut"><img src="/assets/img/jennifer-tada.png" alt="Jennifer" width="938" height="1040"></figure>
+    <figure class="frame frame--tilt-r frame--cut"><img src="/assets/img/jennifer-tada.png" alt="Jennifer" width="1011" height="1064"></figure>
   </div>
 </section>
 <section class="section section--white">
