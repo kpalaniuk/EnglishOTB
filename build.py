@@ -294,7 +294,7 @@ def page_home():
       <a class="btn btn--clay" href="{STRIPE_NIGHT}" target="_blank" rel="noopener">Buy the Night Connections eBook {ICO['arrow']}</a>
       <p class="aside">your purchase helps pay for my new prosthetic leg and 3-month cancer scans that I just found out cost an arm…and a leg 😉</p>
     </div>
-    <div class="reveal">{frame('/assets/img/nightconnections-2.jpg', 'A page from the Night Connections printable: gratitude, reflection, relaxation prompts', 'frame--tilt-r', 1608, 2000)}</div>
+    <div class="reveal">{frame('/assets/img/nightconnections-2.jpg', 'A page from the Night Connections printable: gratitude, reflection, relaxation prompts', 'frame--tilt-r', 1608, 2000, eager=True)}</div>
   </div>
 </section>
 
