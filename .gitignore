@@ -3,3 +3,4 @@ assets/gen/
 .impeccable/review/
 .impeccable/build/
 __pycache__/
+.vercel
