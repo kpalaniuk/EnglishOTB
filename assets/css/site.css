@@ -6,7 +6,7 @@
   --sun-deep: #E0A426;
   --honey: #FFE79A;
   --butter: #FFF3C4;
-  --paper: #FFFFFF;
+  --paper: #FFFDF7;
   --white: #FFFFFF;
   --sage: #A9B89B;
   --sage-deep: #7C8F6E;
@@ -39,7 +39,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 [id] { scroll-margin-top: 90px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -206,7 +206,7 @@ hr { border: 0; border-top: 2px solid var(--ink); opacity: .2; margin: 2.5rem 0;
 .grid-3 { display: grid; gap: clamp(1.25rem, 3vw, 2.25rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
 
 /* ---------- Hero ---------- */
-.hero { border-bottom: 2px solid var(--ink); background: var(--white); }
+.hero { border-bottom: 2px solid var(--ink); background: var(--white); overflow: hidden; }
 .hero__grid { display: grid; grid-template-columns: 1.15fr 1fr; min-height: min(calc(100vh - 76px), 860px); }
 .hero__sun { background: var(--sun); padding: clamp(2rem, 5vw, 4.5rem) var(--gutter) clamp(2rem, 5vw, 4rem) max(var(--gutter), calc((100vw - 1180px) / 2)); display: flex; flex-direction: column; justify-content: center; position: relative; border-right: 2px solid var(--ink); }
 .hero__copy { position: relative; z-index: 2; max-width: 38rem; padding-right: clamp(0px, 14vw, 200px); }
@@ -231,9 +231,9 @@ hr { border: 0; border-top: 2px solid var(--ink); opacity: .2; margin: 2.5rem 0;
   white-space: nowrap; transform: translate(-50%, 0) scale(.2); opacity: 0;
   animation: springOut 1.1s var(--ease-out) forwards;
 }
-.box-scene .word:nth-child(2) { --tx: -45%; --ty: -150%; --rot: -8deg; animation-delay: .5s; }
-.box-scene .word:nth-child(3) { --tx: 0%; --ty: -260%; --rot: 3deg; animation-delay: .75s; }
-.box-scene .word:nth-child(4) { --tx: 55%; --ty: -130%; --rot: 9deg; animation-delay: 1s; }
+.box-scene .word:nth-child(2) { --tx: -55%; --ty: -140%; --rot: -8deg; animation-delay: .5s; }
+.box-scene .word:nth-child(3) { --tx: 5%; --ty: -290%; --rot: 3deg; animation-delay: .75s; }
+.box-scene .word:nth-child(4) { --tx: 60%; --ty: -150%; --rot: 9deg; animation-delay: 1s; }
 @keyframes springOut {
   0% { transform: translate(-50%, 0) scale(.2) rotate(0); opacity: 0; }
   60% { opacity: 1; }
@@ -245,10 +245,10 @@ hr { border: 0; border-top: 2px solid var(--ink); opacity: .2; margin: 2.5rem 0;
 @media (max-width: 1100px) { .box-scene { width: 150px; } }
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; min-height: 0; }
-  .hero__sun { border-right: 0; border-bottom: 2px solid var(--ink); padding-inline: var(--gutter); padding-bottom: 12rem; }
+  .hero__sun { border-right: 0; border-bottom: 2px solid var(--ink); padding-inline: var(--gutter); }
   .hero__title { font-size: var(--step-4); }
   .hero__copy { padding-right: 0; }
-  .box-scene { width: 170px; right: var(--gutter); bottom: 1rem; }
+  .box-scene { position: relative; right: auto; bottom: auto; width: 170px; margin: 6.5rem auto 0; }
 }
 
 /* ---------- Page hero (inner pages) ---------- */
@@ -472,13 +472,11 @@ html:not(.no-js) .reveal.in { opacity: 1; transform: none; }
 .about-facts { list-style: none; padding: 0; display: grid; gap: .6rem; }
 .about-facts li { border: 2px solid var(--ink); background: var(--white); padding: .8rem 1rem; display: flex; gap: .75rem; align-items: center; font-weight: 700; }
 .about-facts li img { width: 34px; height: 34px; object-fit: contain; flex: none; }
-.ticker { overflow: hidden; border-block: 2px solid var(--ink); background: var(--ink); color: var(--sun); font-family: var(--display); font-size: var(--step-1); padding: .7rem 0; white-space: nowrap; }
-.ticker__track { display: inline-block; animation: ticker 40s linear infinite; }
-.ticker__track span { padding-inline: 1.5rem; }
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .ticker__track { animation: none; } }
 
-/* Jennifer cutout */
+/* Jennifer cutout: seated in a poster panel on a sun mat */
+.frame--cut { background: var(--sun); padding: 0; max-width: 420px; margin-inline: auto; }
+.frame--cut img { display: block; width: 100%; height: auto; object-fit: contain; padding: 1.5rem 1rem 0; }
+/* (legacy) */
 .tada { display: flex; align-items: flex-end; justify-content: center; height: 100%; margin-bottom: calc(-1 * clamp(3.5rem, 8vw, 6.5rem)); }
 .tada img { width: min(100%, 420px); height: auto; display: block; }
 @media (max-width: 800px) { .tada { margin-top: 1rem; } }

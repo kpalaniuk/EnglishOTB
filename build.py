@@ -160,7 +160,7 @@ def frame(src, alt, cls="", w=None, h=None, caption="", eager=False):
     load = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
     return f'<figure class="frame {cls}"><img src="{src}" alt="{esc(alt)}"{dims} {load}>{cap}</figure>'
 
-def cta_band(title="Ready to start learning with me?", text="Send me a message on WhatsApp and let’s talk about your English goals.", btn="Message me on WhatsApp", href=WA):
+def cta_band(title="Have questions?", text="If you have a question, send me a message!", btn="Send me a message here", href=WA):
     return f"""<section class="cta-band"><div class="wrap cta-band__in">
   <div><h2>{title}</h2><p>{text}</p></div>
   <a class="btn btn--lg" href="{href}" target="_blank" rel="noopener">{ICO['wa']} {btn}</a>
@@ -201,29 +201,10 @@ def page_home():
   </div>
 </section>
 
-<section class="night" id="night">
-  <div class="wrap night__grid">
-    <div class="reveal">
-      <h2>My ‘Night Connections’ eBook</h2>
-      <p class="lede">A simple and fun way to connect with your littles (or yourself) at the end of the day.</p>
-      <p><b>Included in the printable:</b></p>
-      <ul class="list-check">
-        <li>{ICO['check']} an originally sweet poem to focus on family love and connection</li>
-        <li>{ICO['check']} breathwork to calm the nervous system</li>
-        <li>{ICO['check']} relaxing coloring</li>
-        <li>{ICO['check']} reflective journal or conversation prompts</li>
-        <li>{ICO['check']} prompts rooted in positive psychology to boost positive emotions, self-kindness, empathy and wellbeing</li>
-      </ul>
-      <a class="btn btn--clay" href="{STRIPE_NIGHT}" target="_blank" rel="noopener">Buy the Night Connections eBook {ICO['arrow']}</a>
-      <p class="aside">your purchase helps pay for my new prosthetic leg and 3-month cancer scans that I just found out cost an arm…and a leg 😉</p>
-    </div>
-    <div class="reveal">{frame('/assets/img/nightconnections-2.jpg', 'A page from the Night Connections printable: gratitude, reflection, relaxation prompts', 'frame--tilt-r', 1608, 2000)}</div>
-  </div>
-</section>
+
 
 <section class="section section--white">
   <div class="wrap--narrow center">
-    <p class="pt-flag">Now back to English Outside the Box's regular scheduled programming ☀️</p>
     <h2 class="section__title reveal">So, what do you do?</h2>
     <p class="lede reveal">You've been studying, but you still haven't reached the level of confidence you want…</p>
     <p class="reveal" style="font-family:var(--display);font-size:var(--step-2);margin:1.5rem 0 .5rem">Is it possible?</p>
@@ -233,9 +214,9 @@ def page_home():
   </div>
 </section>
 
-<section class="section section--butter section--line-top" id="jennifer" style="overflow:hidden">
+<section class="section section--butter section--line-top" id="jennifer">
   <div class="wrap grid-2">
-    <div class="tada reveal"><img src="/assets/img/jennifer-tada.png" alt="Jennifer in a bright yellow blouse, arms out in a ta-da pose" width="939" height="1040" loading="lazy"></div>
+    <figure class="frame frame--tilt frame--cut reveal"><img src="/assets/img/jennifer-tada.png" alt="Jennifer in a bright yellow blouse, arms out in a ta-da pose" width="938" height="1040" loading="eager"></figure>
     <div class="reveal">
       <h2>HI! I'm Jennifer Nascimento</h2>
       <p class="lede">I am a certified Positive Psychology English Coach and the founder of the <a href="/englishsuccesssystem/">English Success System</a>.</p>
@@ -268,7 +249,7 @@ def page_home():
       </div>
     </div>
     <div class="reveal" style="position:relative">
-      {frame('/assets/img/Jenna-339.jpg', 'Jennifer at a café table with a laptop and a “Hello Happy” journal', 'frame--tilt-r', 2000, 1334)}
+      {frame('/assets/img/Jenna-339.jpg', 'Jennifer at a café table with a laptop and a “Hello Happy” journal', 'frame--tilt-r', 2000, 1334, eager=True)}
     </div>
   </div>
 </section>
@@ -280,7 +261,7 @@ def page_home():
       <p>In this mini-series, you will learn about the “Hamster Wheel” effect, why you feel stuck, setting goals, and more about my program, methodology, and what you will learn with me. Each video has an actionable step that you can take to start improving now!</p>
       <a class="btn btn--sun" href="/learnwithme/">{ICO['play']} Start with video 1</a>
     </div>
-    <div class="reveal" style="order:1"><img class="ill" src="/assets/img/ill-notebook.png" alt="" width="1120" height="873" loading="lazy" style="max-width:420px;margin-inline:auto"></div>
+    <div class="reveal" style="order:1"><img class="ill" src="/assets/img/ill-notebook.png" alt="" width="1120" height="873" loading="eager" style="max-width:420px;margin-inline:auto"></div>
   </div>
 </section>
 
@@ -296,7 +277,26 @@ def page_home():
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="ticker__track">{'<span>☀ Confidence is MORE than your skills</span><span>☀ Dreams are MORE than your English</span><span>☀ Eu falo português também</span><span>☀ Think in English</span>' * 4}</div></div>
+
+<section class="night section--line-top" id="night">
+  <div class="wrap night__grid">
+    <div class="reveal">
+      <h2>My ‘Night Connections’ eBook</h2>
+      <p class="lede">A simple and fun way to connect with your littles (or yourself) at the end of the day.</p>
+      <p><b>Included in the printable:</b></p>
+      <ul class="list-check">
+        <li>{ICO['check']} an originally sweet poem to focus on family love and connection</li>
+        <li>{ICO['check']} breathwork to calm the nervous system</li>
+        <li>{ICO['check']} relaxing coloring</li>
+        <li>{ICO['check']} reflective journal or conversation prompts</li>
+        <li>{ICO['check']} prompts rooted in positive psychology to boost positive emotions, self-kindness, empathy and wellbeing</li>
+      </ul>
+      <a class="btn btn--clay" href="{STRIPE_NIGHT}" target="_blank" rel="noopener">Buy the Night Connections eBook {ICO['arrow']}</a>
+      <p class="aside">your purchase helps pay for my new prosthetic leg and 3-month cancer scans that I just found out cost an arm…and a leg 😉</p>
+    </div>
+    <div class="reveal">{frame('/assets/img/nightconnections-2.jpg', 'A page from the Night Connections printable: gratitude, reflection, relaxation prompts', 'frame--tilt-r', 1608, 2000)}</div>
+  </div>
+</section>
 
 {cta_band()}
 """
@@ -362,7 +362,7 @@ def page_about():
     <p class="reveal">If that is not what you're looking for, then <a href="/contact/">send me a message</a>.</p>
   </div>
 </section>
-{cta_band("Let's talk about your English goals", "Every program starts with a personalized assessment. Message me and we'll find your starting point.")}
+{cta_band("How can you start learning with me?", "Send me a message to get started and talk about your English goals!")}
 """
     return layout("About", body, "/about/", "Meet Jennifer Nascimento — Positive Psychology English Coach, fellow language learner, world traveler, and founder of English Outside the Box.", "/assets/img/IMG_1840.jpg")
 
@@ -557,14 +557,14 @@ def page_lwm(i):
 # ======================================================================
 def page_ingles():
     body = f"""
-<section class="page-hero" style="overflow:hidden">
+<section class="page-hero">
   <div class="wrap page-hero__grid">
     <div>
       <h1>inglês com Jennifer</h1>
       <p class="lede">Você quer aprender mais comigo? Sou uma professora de inglês. Eu falo português e posso te ajudar!</p>
       <div class="btn-row"><a class="btn" href="{WA}" target="_blank" rel="noopener">{ICO['wa']} Manda uma mensagem</a></div>
     </div>
-    <div class="tada" style="margin-bottom:calc(-1 * clamp(2.5rem, 6vw, 4.5rem))"><img src="/assets/img/jennifer-tada.png" alt="Jennifer" width="939" height="1040"></div>
+    <figure class="frame frame--tilt-r frame--cut"><img src="/assets/img/jennifer-tada.png" alt="Jennifer" width="938" height="1040"></figure>
   </div>
 </section>
 <section class="section section--white">
@@ -891,7 +891,8 @@ def local_img(src):
     if "englishoutsidethebox.com/wp-content/uploads" in s:
         name = os.path.basename(s)
         base = re.sub(r"-\d+x\d+(\.[a-z]+)$", r"\1", name)
-        for cand in (name, base):
+        base2 = re.sub(r"-scaled(\.[a-z]+)$", r"\1", base)
+        for cand in (name, base, base2):
             if (ROOT / "assets/img" / cand).exists(): return "/assets/img/" + cand
         if s in IMG_MAP: return IMG_MAP[s]
         # try blog map (hash-prefixed)
@@ -1198,7 +1199,7 @@ def page_post(p, prev_p, next_p):
   <nav class="post-nav" aria-label="Post navigation">{nav}</nav>
 </div>
 </article>
-{cta_band("Want more than a blog post?", "The English Success System turns lessons like this into everyday confidence. Message me to talk about your goals.")}
+{cta_band()}
 """
     title = BeautifulSoup(p["title"]["rendered"], "lxml").get_text()
     return layout(title, body, post_path(p), excerpt(p), fi or "/assets/img/og.jpg")
