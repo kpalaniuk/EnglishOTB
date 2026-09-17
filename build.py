@@ -154,10 +154,11 @@ def write(path, htmlstr):
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(htmlstr, encoding="utf-8")
 
-def frame(src, alt, cls="", w=None, h=None, caption=""):
+def frame(src, alt, cls="", w=None, h=None, caption="", eager=False):
     dims = f' width="{w}" height="{h}"' if w and h else ""
     cap = f"<figcaption>{caption}</figcaption>" if caption else ""
-    return f'<figure class="frame {cls}"><img src="{src}" alt="{esc(alt)}"{dims} loading="lazy">{cap}</figure>'
+    load = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
+    return f'<figure class="frame {cls}"><img src="{src}" alt="{esc(alt)}"{dims} {load}>{cap}</figure>'
 
 def cta_band(title="Ready to start learning with me?", text="Send me a message on WhatsApp and let’s talk about your English goals.", btn="Message me on WhatsApp", href=WA):
     return f"""<section class="cta-band"><div class="wrap cta-band__in">
@@ -195,7 +196,7 @@ def page_home():
     </div>
     <div class="hero__photo">
       <img class="hero__badge" src="/assets/img/ill-sun.png" alt="" width="1266" height="1262">
-      {frame('/assets/img/Jenna-111-scaled.jpg', 'Jennifer Nascimento writing in a journal on a park bench, wearing a mustard sweater', 'frame--tilt', 1200, 800)}
+      {frame('/assets/img/Jenna-111-scaled.jpg', 'Jennifer Nascimento writing in a journal on a park bench, wearing a mustard sweater', 'frame--tilt', 1400, 933, eager=True)}
     </div>
   </div>
 </section>
